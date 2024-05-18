@@ -3560,23 +3560,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gusta\\.nuget\\packages\\": {},
+    "C:\\Users\\andre\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Documents\\SGFME\\www\\www.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\www\\www.csproj",
       "projectName": "www",
-      "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\www\\www.csproj",
-      "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gusta\\Documents\\SGFME\\www\\obj\\",
+      "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\www\\www.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\www\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3592,8 +3592,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Application\\SGFME.Application.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Application\\SGFME.Application.csproj"
+            "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Application\\SGFME.Application.csproj": {
+              "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Application\\SGFME.Application.csproj"
             }
           }
         }
@@ -3631,7 +3631,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

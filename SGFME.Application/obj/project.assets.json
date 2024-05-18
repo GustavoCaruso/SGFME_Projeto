@@ -3541,23 +3541,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gusta\\.nuget\\packages\\": {},
+    "C:\\Users\\andre\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Application\\SGFME.Application.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Application\\SGFME.Application.csproj",
       "projectName": "SGFME.Application",
-      "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Application\\SGFME.Application.csproj",
-      "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Application\\obj\\",
+      "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Application\\SGFME.Application.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3573,11 +3573,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Domain\\SGFME.Domain.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Domain\\SGFME.Domain.csproj"
+            "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Domain\\SGFME.Domain.csproj": {
+              "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Domain\\SGFME.Domain.csproj"
             },
-            "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Service\\SGFME.Service.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Service\\SGFME.Service.csproj"
+            "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Service\\SGFME.Service.csproj": {
+              "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Service\\SGFME.Service.csproj"
             }
           }
         }
@@ -3637,7 +3637,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

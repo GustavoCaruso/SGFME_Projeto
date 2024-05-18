@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yLPJs+CMot1CTS4ytadcwdogFwU6rmKAjvdbnEoefpjbPwrCx2oaxVjh6SlwJtJQPSukbQ8LcGrak2uBrgKi4Q==",
+  "dgSpecHash": "HXXi4lynn7kZRmNkWCFKQsJ8xWZP6Fptfp8iR6ukxxIhkBoZzh4Ioc4V6FJQKgCENrXUSZ2WuFU3C/xGiZUzww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Domain\\SGFME.Domain.csproj",
+  "projectFilePath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Domain\\SGFME.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gusta\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512"
+    "C:\\Users\\andre\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512"
   ],
   "logs": []
 }

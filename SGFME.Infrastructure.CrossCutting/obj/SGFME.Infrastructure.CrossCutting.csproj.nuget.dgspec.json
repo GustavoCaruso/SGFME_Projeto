@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj": {}
+    "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj": {
+    "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj",
         "projectName": "SGFME.Infrastructure.CrossCutting",
-        "projectPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gusta\\Documents\\SGFME\\SGFME.Infrastructure.CrossCutting\\obj\\",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Infrastructure.CrossCutting\\SGFME.Infrastructure.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Área de Trabalho\\Projeto_SGFME\\SGFME_Projeto\\SGFME.Infrastructure.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
