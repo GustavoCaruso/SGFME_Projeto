@@ -12,8 +12,8 @@ namespace SGFME.Service.Validators
     {
         public PacienteValidator() 
         {
-            RuleFor(p => p.nomeCompleto).NotEmpty().WithMessage("Informe o Nome Completo!");
-            RuleFor(p => p.nomeCompleto).NotNull().WithMessage("Informe o nome completo!");
+            RuleFor(p => p.nomeCompleto).NotEmpty().WithMessage("Informe o Nome!");
+            RuleFor(p => p.nomeCompleto).NotNull().WithMessage("Informe o nome!");
         }
     }
 }

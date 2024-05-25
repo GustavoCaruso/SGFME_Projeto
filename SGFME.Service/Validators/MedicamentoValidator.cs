@@ -10,10 +10,12 @@ namespace SGFME.Service.Validators
 {
     public class MedicamentoValidator : AbstractValidator<Medicamento>
     {
-        public MedicamentoValidator() { 
-            
-        
-        
+        public MedicamentoValidator() 
+        {
+            RuleFor(p => p.nome).NotEmpty().WithMessage("Informe o Nome Completo!");
+            RuleFor(p => p.nome).NotNull().WithMessage("Informe o nome completo!");
+
+
         }
     }
 }
