@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SGFME.Domain.Entidades
+﻿namespace SGFME.Application.Models
 {
-    //Nome, principio ativo, lote, validade, fabricante, forma farmaceutica,
-    //dosagens existentes.
-    public class Medicamento : BaseEntity
+    public class MedicamentoModel
     {
+        public long id { get; set; }
         public string nome { get; set; }
         public string principioAtivo { get; set; }
         public string lote { get; set; }
@@ -17,5 +10,6 @@ namespace SGFME.Domain.Entidades
         public string fabricante { get; set; }
         public string formaFarmaceutica { get; set; }
         public string dosagemExistente { get; set; }
+
     }
 }

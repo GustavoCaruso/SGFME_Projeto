@@ -52,6 +52,8 @@ namespace SGFME.Application
 
                 config.CreateMap<Paciente, PacienteModel>();
                 config.CreateMap<PacienteModel, Paciente>();
+                config.CreateMap<Medicamento, MedicamentoModel>();
+                config.CreateMap<MedicamentoModel, Medicamento>();
 
                 
 
@@ -60,6 +62,8 @@ namespace SGFME.Application
             services.AddScoped<IBaseService<Paciente>, BaseService<Paciente>>();
             services.AddScoped<IBaseRepository<Paciente>, BaseRepository<Paciente>>();
 
+            services.AddScoped<IBaseService<Medicamento>, BaseService<Medicamento>>();
+            services.AddScoped<IBaseRepository<Medicamento>, BaseRepository<Medicamento>>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)
