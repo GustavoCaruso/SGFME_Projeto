@@ -1,6 +1,0 @@
-@SGFME_PV_HostAddress = http://localhost:5003
-
-GET {{SGFME_PV_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
