@@ -57,13 +57,109 @@ namespace SGFME.Application
 
                 
 
+<<<<<<< Updated upstream
+=======
+                config.CreateMap<Status, StatusModel>();
+                config.CreateMap<StatusModel, Status>();
+
+                config.CreateMap<EstadoCivil, EstadoCivilModel>();
+                config.CreateMap<EstadoCivilModel, EstadoCivil>();
+
+                config.CreateMap<Profissao, ProfissaoModel>();
+                config.CreateMap<ProfissaoModel, Profissao>();
+
+                config.CreateMap<Endereco, EnderecoModel>();
+                config.CreateMap<EnderecoModel, Endereco>();
+
+               
+
+                config.CreateMap<Naturalidade, NaturalidadeModel>();
+                config.CreateMap<NaturalidadeModel, Naturalidade>();
+
+                config.CreateMap<TipoEndereco, TipoEnderecoModel>();
+                config.CreateMap<TipoEnderecoModel, TipoEndereco>();
+
+                config.CreateMap<Pessoa, PessoaModel>();
+                config.CreateMap<PessoaModel, Pessoa>();
+
+                config.CreateMap<Cid, CidModel>();
+                config.CreateMap<CidModel, Cid>();
+
+                config.CreateMap<EstabelecimentoSaude, EstabelecimentoSaudeModel>();
+                config.CreateMap<EstabelecimentoSaudeModel, EstabelecimentoSaude>();
+
+                config.CreateMap<Medico, MedicoModel>();
+                config.CreateMap<MedicoModel, Medico>();
+
+                config.CreateMap<Medicamento, MedicamentoModel>();
+                config.CreateMap<MedicamentoModel, Medicamento>();
+
+
+
+
+
+>>>>>>> Stashed changes
             }).CreateMapper());
 
             services.AddScoped<IBaseService<Paciente>, BaseService<Paciente>>();
             services.AddScoped<IBaseRepository<Paciente>, BaseRepository<Paciente>>();
 
+<<<<<<< Updated upstream
             services.AddScoped<IBaseService<Medicamento>, BaseService<Medicamento>>();
             services.AddScoped<IBaseRepository<Medicamento>, BaseRepository<Medicamento>>();
+=======
+            services.AddScoped<IBaseService<Contato>, BaseService<Contato>>();
+            services.AddScoped<IBaseRepository<Contato>, BaseRepository<Contato>>();
+
+            services.AddScoped<IBaseService<TipoContato>, BaseService<TipoContato>>();
+            services.AddScoped<IBaseRepository<TipoContato>, BaseRepository<TipoContato>>();
+
+            services.AddScoped<IBaseService<CorRaca>, BaseService<CorRaca>>();
+            services.AddScoped<IBaseRepository<CorRaca>, BaseRepository<CorRaca>>();
+
+            services.AddScoped<IBaseService<Sexo>, BaseService<Sexo>>();
+            services.AddScoped<IBaseRepository<Sexo>, BaseRepository<Sexo>>();
+
+           
+
+            services.AddScoped<IBaseService<Status>, BaseService<Status>>();
+            services.AddScoped<IBaseRepository<Status>, BaseRepository<Status>>();
+
+            services.AddScoped<IBaseService<EstadoCivil>, BaseService<EstadoCivil>>();
+            services.AddScoped<IBaseRepository<EstadoCivil>, BaseRepository<EstadoCivil>>();
+
+            services.AddScoped<IBaseService<Profissao>, BaseService<Profissao>>();
+            services.AddScoped<IBaseRepository<Profissao>, BaseRepository<Profissao>>();
+
+            services.AddScoped<IBaseService<Endereco>, BaseService<Endereco>>();
+            services.AddScoped<IBaseRepository<Endereco>, BaseRepository<Endereco>>();
+
+           
+
+            services.AddScoped<IBaseService<Naturalidade>, BaseService<Naturalidade>>();
+            services.AddScoped<IBaseRepository<Naturalidade>, BaseRepository<Naturalidade>>();
+
+            services.AddScoped<IBaseService<TipoEndereco>, BaseService<TipoEndereco>>();
+            services.AddScoped<IBaseRepository<TipoEndereco>, BaseRepository<TipoEndereco>>();
+
+            services.AddScoped<IBaseService<Pessoa>, BaseService<Pessoa>>();
+            services.AddScoped<IBaseRepository<Pessoa>, BaseRepository<Pessoa>>();
+
+            services.AddScoped<IBaseService<Cid>, BaseService<Cid>>();
+            services.AddScoped<IBaseRepository<Cid>, BaseRepository<Cid>>();
+
+            services.AddScoped<IBaseService<EstabelecimentoSaude>, BaseService<EstabelecimentoSaude>>();
+            services.AddScoped<IBaseRepository<EstabelecimentoSaude>, BaseRepository<EstabelecimentoSaude>>();
+
+            services.AddScoped<IBaseService<Medico>, BaseService<Medico>>();
+            services.AddScoped<IBaseRepository<Medico>, BaseRepository<Medico>>();
+
+            services.AddScoped<IBaseService<Medicamento>, BaseService<Medicamento>>();
+            services.AddScoped<IBaseRepository<Medicamento>, BaseRepository<Medicamento>>();
+
+
+
+>>>>>>> Stashed changes
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)

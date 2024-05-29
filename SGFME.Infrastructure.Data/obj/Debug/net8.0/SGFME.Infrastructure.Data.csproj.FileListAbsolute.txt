@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.deps.json
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.dll
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.pdb
@@ -14,3 +15,37 @@ C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infr
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\obj\Debug\net8.0\refint\SGFME.Infrastructure.Data.dll
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.pdb
 C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Infrastructure.Data\obj\Debug\net8.0\ref\SGFME.Infrastructure.Data.dll
+=======
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.deps.json
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.pdb
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Domain.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.sourcelink.json
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.In.DEC6A3E0.Up2Date
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\refint\SGFME.Infrastructure.Data.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.pdb
+C:\Users\gusta\Documents\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\ref\SGFME.Infrastructure.Data.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.deps.json
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Infrastructure.Data.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\bin\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.sourcelink.json
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.In.DEC6A3E0.Up2Date
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\refint\SGFME.Infrastructure.Data.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\SGFME.Infrastructure.Data.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Infrastructure.Data\obj\Debug\net8.0\ref\SGFME.Infrastructure.Data.dll
+>>>>>>> Stashed changes
