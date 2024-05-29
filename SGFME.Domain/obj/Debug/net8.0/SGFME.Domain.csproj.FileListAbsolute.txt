@@ -1,0 +1,42 @@
+<<<<<<< Updated upstream
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.deps.json
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.sourcelink.json
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\refint\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\Projeto_SGFME\SGFME_Projeto\SGFME.Domain\obj\Debug\net8.0\ref\SGFME.Domain.dll
+=======
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.deps.json
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.AssemblyReference.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfoInputs.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfo.cs
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.sourcelink.json
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\refint\SGFME.Domain.dll
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\gusta\Documents\SGFME\SGFME.Domain\obj\Debug\net8.0\ref\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.deps.json
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\bin\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.sourcelink.json
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\refint\SGFME.Domain.dll
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\SGFME.Domain.pdb
+C:\Users\andre\OneDrive\Área de Trabalho\SGFME quase fim\SGFME\SGFME\SGFME.Domain\obj\Debug\net8.0\ref\SGFME.Domain.dll
+>>>>>>> Stashed changes

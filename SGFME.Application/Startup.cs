@@ -53,6 +53,8 @@ namespace SGFME.Application
 
                 config.CreateMap<Paciente, PacienteModel>();
                 config.CreateMap<PacienteModel, Paciente>();
+                config.CreateMap<Medicamento, MedicamentoModel>();
+                config.CreateMap<MedicamentoModel, Medicamento>();
 
                 config.CreateMap<Contato, ContatoModel>();
                 config.CreateMap<ContatoModel, Contato>();
@@ -68,6 +70,11 @@ namespace SGFME.Application
 
                 
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Andre
                 config.CreateMap<Status, StatusModel>();
                 config.CreateMap<StatusModel, Status>();
 
@@ -100,17 +107,33 @@ namespace SGFME.Application
                 config.CreateMap<Medico, MedicoModel>();
                 config.CreateMap<MedicoModel, Medico>();
 
+<<<<<<< HEAD
                 
+=======
+                config.CreateMap<Medicamento, MedicamentoModel>();
+                config.CreateMap<MedicamentoModel, Medicamento>();
+>>>>>>> Andre
 
 
 
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Andre
             }).CreateMapper());
 
             services.AddScoped<IBaseService<Paciente>, BaseService<Paciente>>();
             services.AddScoped<IBaseRepository<Paciente>, BaseRepository<Paciente>>();
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+            services.AddScoped<IBaseService<Medicamento>, BaseService<Medicamento>>();
+            services.AddScoped<IBaseRepository<Medicamento>, BaseRepository<Medicamento>>();
+=======
+>>>>>>> Andre
             services.AddScoped<IBaseService<Contato>, BaseService<Contato>>();
             services.AddScoped<IBaseRepository<Contato>, BaseRepository<Contato>>();
 
@@ -157,8 +180,17 @@ namespace SGFME.Application
             services.AddScoped<IBaseService<Medico>, BaseService<Medico>>();
             services.AddScoped<IBaseRepository<Medico>, BaseRepository<Medico>>();
 
+<<<<<<< HEAD
             
 
+=======
+            services.AddScoped<IBaseService<Medicamento>, BaseService<Medicamento>>();
+            services.AddScoped<IBaseRepository<Medicamento>, BaseRepository<Medicamento>>();
+
+
+
+>>>>>>> Stashed changes
+>>>>>>> Andre
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)

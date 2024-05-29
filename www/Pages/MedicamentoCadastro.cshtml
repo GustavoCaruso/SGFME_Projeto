@@ -1,0 +1,55 @@
+﻿@page
+@model www.Pages.MedicamentoCadastroModel
+@{
+}
+
+<form class="row g-3">
+    <div class="col-md-2">
+        <label for="txtid" class="form-label">Código</label>
+        <input type="text" class="form-control" id="txtid" value="0" placeholder="Código" disabled>
+    </div>
+
+    <div class="col-md-6">
+        <label for="txtnome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="txtnome" placeholder="Nome" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="txtprincipioAtivo" class="form-label">Princípio Ativo</label>
+        <input type="text" class="form-control" id="txtprincipioAtivo" placeholder="Princípio Ativo" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="txtlote" class="form-label">Lote</label>
+        <input type="text" class="form-control" id="txtlote" placeholder="Lote" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="txtdataValidade" class="form-label">Data de Validade</label>
+        <input type="date" class="form-control" id="txtdataValidade" placeholder="Data de Validade" required>
+    </div>
+
+    <div class="col-md-3">
+        <label for="txtfabricante" class="form-label">Fabricante</label>
+        <input type="text" class="form-control" id="txtfabricante" placeholder="Fabricante" required>
+    </div>
+
+    <div class="col-md-3">
+        <label for="txtformaFarmaceutica" class="form-label">Forma Farmacêutica</label>
+        <input type="text" class="form-control" id="txtformaFarmaceutica" placeholder="Forma Farmacêutica" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="txtdosagemExistente" class="form-label">Dosagem Existente</label>
+        <input type="text" class="form-control" id="txtdosagemExistente" placeholder="Dosagem Existente">
+    </div>
+
+    <div class="col-12">
+        <button type="button" id="btnsalvar" class="btn btn-primary">Cadastrar</button>
+        <button type="button" id="btnlimpar" class="btn btn-primary">Limpar</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/js/Medicamento.js"></script>
+}

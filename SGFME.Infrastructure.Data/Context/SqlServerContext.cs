@@ -17,6 +17,12 @@ namespace SGFME.Infrastructure.Data.Context
             this.Database.EnsureCreated();
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+        public DbSet<Paciente> pacientes { get; set; }//Replicar para as próximas entidades
+=======
+>>>>>>> Andre
         public DbSet<Paciente> paciente { get; set; }//Replicar para as próximas entidades
         public DbSet<Contato> contato { get; set; }//Replicar para as próximas entidades
         public DbSet<TipoContato> tipocontato { get; set; }//Replicar para as próximas entidades
@@ -32,13 +38,27 @@ namespace SGFME.Infrastructure.Data.Context
         public DbSet<Cid> cid { get; set; }//Replicar para as próximas entidades
         public DbSet<EstabelecimentoSaude> estabelecimentosaude { get; set; }//Replicar para as próximas entidades
         public DbSet<Medico> medico { get; set; }//Replicar para as próximas entidades
+<<<<<<< HEAD
        
 
+=======
+
+>>>>>>> Stashed changes
+        public DbSet<Medicamento> medicamento { get; set; }
+>>>>>>> Andre
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+<<<<<<< HEAD
             var stringConexao = @"Server=DELLG3GUSTAVO;DataBase=SGFMEv36;integrated security=true;TrustServerCertificate=True;";
+=======
+<<<<<<< Updated upstream
+            var stringConexao = @"Server=ANDRE;DataBase=SGFMEv1;integrated security=true;TrustServerCertificate=True;";
+=======
+            var stringConexao = @"Server=ANDRE;DataBase=SGFMEv76;integrated security=true;TrustServerCertificate=True;";
+>>>>>>> Stashed changes
+>>>>>>> Andre
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(stringConexao)
@@ -51,6 +71,11 @@ namespace SGFME.Infrastructure.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Paciente>(new PacienteMapping().Configure);//Replicar para as próximas entidades
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Andre
             modelBuilder.Entity<Contato>(new ContatoMapping().Configure);//Replicar para as próximas entidades
             modelBuilder.Entity<TipoContato>(new TipoContatoMapping().Configure);//Replicar para as próximas entidades
             modelBuilder.Entity<CorRaca>(new CorRacaMapping().Configure);//Replicar para as próximas entidades
@@ -68,7 +93,12 @@ namespace SGFME.Infrastructure.Data.Context
             modelBuilder.Entity<Cid>(new CidMapping().Configure);//Replicar para as próximas entidades
             modelBuilder.Entity<EstabelecimentoSaude>(new EstabelecimentoSaudeMapping().Configure);//Replicar para as próximas entidades
             modelBuilder.Entity<Medico>(new MedicoMapping().Configure);//Replicar para as próximas entidades
+<<<<<<< HEAD
            
+=======
+>>>>>>> Stashed changes
+            modelBuilder.Entity<Medicamento>(new MedicamentoMapping().Configure);
+>>>>>>> Andre
 
         }
     }

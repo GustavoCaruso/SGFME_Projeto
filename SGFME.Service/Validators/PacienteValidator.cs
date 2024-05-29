@@ -12,6 +12,7 @@ namespace SGFME.Service.Validators
     {
         public PacienteValidator() 
         {
+<<<<<<< HEAD
             // Validação do nome completo
             RuleFor(p => p.nomeCompleto)
                 .NotEmpty().WithMessage("Informe o Nome Completo!")
@@ -68,6 +69,10 @@ namespace SGFME.Service.Validators
                 .NotEmpty().WithMessage("Informe a Data de Cadastro!")
                 .LessThanOrEqualTo(DateTime.Now).WithMessage("A Data de Cadastro deve ser hoje ou no passado!");
 
+=======
+            RuleFor(p => p.nomeCompleto).NotEmpty().WithMessage("Informe o Nome!");
+            RuleFor(p => p.nomeCompleto).NotNull().WithMessage("Informe o nome!");
+>>>>>>> Andre
         }
     }
 }
