@@ -1,0 +1,43 @@
+﻿@page
+@model www.Pages.MedicamentoGerenciamentoModel
+@{
+}
+
+<table id="tabelaMedicamento" class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Princípio Ativo</th>
+            <th scope="col">Lote</th>
+            <th scope="col">Validade</th>
+            <th scope="col">Fabricante</th>
+            <th scope="col">Forma Farmacêutica</th>
+            <th scope="col">Dosagens Existentes</th>
+            <th scope="col">Visualizar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody id="tabela">
+    </tbody>
+</table>
+
+<table style="display:none">
+    <tr id="linhaExemplo">
+        <th scope="row" class="codigo"></th>
+        <td class="nome"></td>
+        <td class="principioAtivo"></td>
+        <td class="lote"></td>
+        <td class="dataValidade"></td>
+        <td class="fabricante"></td>
+        <td class="formaFarmaceutica"></td>
+        <td class="dosagemExistente"></td>
+        <td><a href="#" class="alterar btn btn-info btn-sm">Visualizar</a></td>
+        <td><a href="#" class="excluir btn btn-danger btn-sm">Excluir</a></td>
+    </tr>
+</table>
+
+@section Scripts
+{
+    <script src="~/js/Medicamento.js"></script>
+}
