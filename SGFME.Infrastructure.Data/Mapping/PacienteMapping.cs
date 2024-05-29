@@ -23,30 +23,6 @@ namespace SGFME.Infrastructure.Data.Mapping
             .HasColumnName("nomeCompleto")
             .HasColumnType("varchar(150)");
 
-            builder.Property(prop => prop.sexo)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("sexo")
-            .HasColumnType("varchar(50)");
-
-            builder.Property(prop => prop.rg)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("rg")
-            .HasColumnType("varchar(8)");
-
-            builder.Property(prop => prop.cpf)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("cpf")
-            .HasColumnType("varchar(11)");
-
-            builder.Property(prop => prop.cns)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("cns")
-            .HasColumnType("varchar(15)");
-
             builder.Property(prop => prop.peso)
             .IsRequired()
             .HasColumnName("peso")
@@ -63,29 +39,10 @@ namespace SGFME.Infrastructure.Data.Mapping
             .HasColumnName("dataNascimento")
             .HasColumnType("datetime");
 
-            builder.Property(prop => prop.naturalidade)
-            .HasConversion(prop => prop.ToString(), prop => prop)
+            builder.Property(prop => prop.idade)
             .IsRequired()
-            .HasColumnName("naturalidade")
-            .HasColumnType("varchar(150)");
-
-            builder.Property(prop => prop.ufNaturalidade)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("ufNaturalidade")
-            .HasColumnType("varchar(2)");
-
-            builder.Property(prop => prop.corRaca)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("corRaca")
-            .HasColumnType("varchar(50)");
-
-            builder.Property(prop => prop.estadoCivil)
-            .HasConversion(prop => prop.ToString(), prop => prop)
-            .IsRequired()
-            .HasColumnName("estadoCivil")
-            .HasColumnType("varchar(50)");
+            .HasColumnName("idade")
+            .HasColumnType("int");
 
             builder.Property(prop => prop.nomeMae)
             .HasConversion(prop => prop.ToString(), prop => prop)
@@ -93,6 +50,47 @@ namespace SGFME.Infrastructure.Data.Mapping
             .HasColumnName("nomeMae")
             .HasColumnType("varchar(150)");
 
+
+
+            builder.Property(p => p.rgNumero).IsRequired() //campo requerido
+                .HasColumnType("varchar(150)")  //tipo da coluna
+                .HasColumnName("rgNumero");  //nome da coluna no bd
+
+            builder.Property(p => p.rgDataEmissao)
+                .HasColumnType("datetime")
+                .HasColumnName("rgDataEmissao");
+
+            builder.Property(p => p.rgOrgaoExpedidor).IsRequired() //campo requerido
+                .HasColumnType("varchar(150)")  //tipo da coluna
+                .HasColumnName("rgOrgaoExpedidor");  //nome da coluna no bd
+
+            builder.Property(p => p.rgUfEmissao).IsRequired() //campo requerido
+                .HasColumnType("varchar(150)")  //tipo da coluna
+                .HasColumnName("rgUfEmissao");  //nome da coluna no bd
+
+
+
+
+            builder.Property(p => p.cpfNumero).IsRequired() //campo requerido
+                .HasColumnType("varchar(150)")  //tipo da coluna
+                .HasColumnName("cpfNumero");  //nome da coluna no bd
+
+
+            builder.Property(p => p.cnsNumero).IsRequired() //campo requerido
+                .HasColumnType("varchar(150)")  //tipo da coluna
+                .HasColumnName("cnsNumero");  //nome da coluna no bd
+
+
+
+
+            builder.Property(p => p.nomeConjuge) //campo requerido
+               .HasColumnType("varchar(150)")  //tipo da coluna
+               .HasColumnName("nomeConjuge");  //nome da coluna no bd
+
+
+            builder.Property(p => p.dataCadastro)
+                .HasColumnType("datetime")
+                .HasColumnName("dataCadastro");
 
 
         }
