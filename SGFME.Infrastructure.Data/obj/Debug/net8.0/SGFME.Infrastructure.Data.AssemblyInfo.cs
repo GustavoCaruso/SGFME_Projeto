@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SGFME.Infrastructure.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7ff262e20d175e7a7f33ecf3528411f5d59fc18")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7734d9d57a858a2ed0c6a9dc533b0ca360d03ffc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SGFME.Infrastructure.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SGFME.Infrastructure.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
