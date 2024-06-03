@@ -17,21 +17,21 @@ namespace SGFME.Infrastructure.Data.Context
             this.Database.EnsureCreated();
         }
 
-        public DbSet<Paciente> paciente { get; set; }//Replicar para as próximas entidades
-        public DbSet<Contato> contato { get; set; }//Replicar para as próximas entidades
-        public DbSet<TipoContato> tipocontato { get; set; }//Replicar para as próximas entidades
-        public DbSet<CorRaca> corraca { get; set; }//Replicar para as próximas entidades
-        public DbSet<Sexo> sexo { get; set; }//Replicar para as próximas entidades
-        public DbSet<Status> status { get; set; }//Replicar para as próximas entidades
-        public DbSet<EstadoCivil> estadocivil { get; set; }//Replicar para as próximas entidades
-        public DbSet<Profissao> profissao { get; set; }//Replicar para as próximas entidades
-        public DbSet<Endereco> endereco { get; set; }//Replicar para as próximas entidades
-        public DbSet<Naturalidade> naturalidade { get; set; }//Replicar para as próximas entidades
-        public DbSet<TipoEndereco> tipoendereco { get; set; }//Replicar para as próximas entidades
-        public DbSet<Pessoa> pessoa { get; set; }//Replicar para as próximas entidades
-        public DbSet<Cid> cid { get; set; }//Replicar para as próximas entidades
-        public DbSet<EstabelecimentoSaude> estabelecimentosaude { get; set; }//Replicar para as próximas entidades
-        public DbSet<Medico> medico { get; set; }//Replicar para as próximas entidades
+        public DbSet<Paciente> paciente { get; set; }
+        public DbSet<Contato> contato { get; set; }
+        public DbSet<TipoContato> tipocontato { get; set; }
+        public DbSet<CorRaca> corraca { get; set; }
+        public DbSet<Sexo> sexo { get; set; }
+        public DbSet<Status> status { get; set; }
+        public DbSet<EstadoCivil> estadocivil { get; set; }
+        public DbSet<Profissao> profissao { get; set; }
+        public DbSet<Endereco> endereco { get; set; }
+        public DbSet<Naturalidade> naturalidade { get; set; }
+        public DbSet<TipoEndereco> tipoendereco { get; set; }
+        public DbSet<Pessoa> pessoa { get; set; }
+        public DbSet<Cid> cid { get; set; }
+        public DbSet<EstabelecimentoSaude> estabelecimentosaude { get; set; } 
+        public DbSet<Medico> medico { get; set; }
         public DbSet<Representante> representante { get; set; }
         public DbSet<Medicamento> medicamento { get; set; }
         public DbSet<Especialidade> especialidade { get; set; }
@@ -43,7 +43,7 @@ namespace SGFME.Infrastructure.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var stringConexao = @"Server=DELLG3GUSTAVO;DataBase=SGFMEv42;integrated security=true;TrustServerCertificate=True;";
+            var stringConexao = @"Server=ANDRE;DataBase=SGFMEv98;integrated security=true;TrustServerCertificate=True;";
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(stringConexao)
@@ -55,24 +55,24 @@ namespace SGFME.Infrastructure.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Paciente>(new PacienteMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Contato>(new ContatoMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<TipoContato>(new TipoContatoMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<CorRaca>(new CorRacaMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Sexo>(new SexoMapping().Configure);//Replicar para as próximas entidades
+            modelBuilder.Entity<Paciente>(new PacienteMapping().Configure);
+            modelBuilder.Entity<Contato>(new ContatoMapping().Configure);
+            modelBuilder.Entity<TipoContato>(new TipoContatoMapping().Configure);
+            modelBuilder.Entity<CorRaca>(new CorRacaMapping().Configure);
+            modelBuilder.Entity<Sexo>(new SexoMapping().Configure);
            
-            modelBuilder.Entity<Status>(new StatusMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<EstadoCivil>(new EstadoCivilMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Profissao>(new ProfissaoMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Endereco>(new EnderecoMapping().Configure);//Replicar para as próximas entidades
+            modelBuilder.Entity<Status>(new StatusMapping().Configure);
+            modelBuilder.Entity<EstadoCivil>(new EstadoCivilMapping().Configure);
+            modelBuilder.Entity<Profissao>(new ProfissaoMapping().Configure);
+            modelBuilder.Entity<Endereco>(new EnderecoMapping().Configure);
             
-            modelBuilder.Entity<Naturalidade>(new NaturalidadeMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<TipoEndereco>(new TipoEnderecoMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Pessoa>(new PessoaMapping().Configure);//Replicar para as próximas entidades
+            modelBuilder.Entity<Naturalidade>(new NaturalidadeMapping().Configure);
+            modelBuilder.Entity<TipoEndereco>(new TipoEnderecoMapping().Configure);
+            modelBuilder.Entity<Pessoa>(new PessoaMapping().Configure);
 
-            modelBuilder.Entity<Cid>(new CidMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<EstabelecimentoSaude>(new EstabelecimentoSaudeMapping().Configure);//Replicar para as próximas entidades
-            modelBuilder.Entity<Medico>(new MedicoMapping().Configure);//Replicar para as próximas entidades
+            modelBuilder.Entity<Cid>(new CidMapping().Configure);
+            modelBuilder.Entity<EstabelecimentoSaude>(new EstabelecimentoSaudeMapping().Configure);
+            modelBuilder.Entity<Medico>(new MedicoMapping().Configure);
 
             modelBuilder.Entity<Representante>(new RepresentanteMapping().Configure);   
             modelBuilder.Entity<Medicamento>(new MedicamentoMapping().Configure);
