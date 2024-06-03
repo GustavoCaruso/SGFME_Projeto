@@ -191,6 +191,7 @@ namespace SGFME.Application
                 .AllowAnyHeader();
             });
 
+
             app.UseAuthentication();
 
             app.UseAuthorization();
