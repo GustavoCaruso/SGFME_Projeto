@@ -43,11 +43,10 @@ namespace SGFME.Infrastructure.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-<<<<<<< HEAD
+
             var stringConexao = @"Server=DELLG3GUSTAVO;DataBase=SGFMEv43;integrated security=true;TrustServerCertificate=True;";
-=======
-            var stringConexao = @"Server=ANDRE;DataBase=SGFMEv98;integrated security=true;TrustServerCertificate=True;";
->>>>>>> 872265d8a54747f84d53e2a22c96495a9aaa9e56
+
+            
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(stringConexao)
