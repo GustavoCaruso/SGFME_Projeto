@@ -39,3 +39,4 @@ project.nuget.cache
 *.tmp
 *.temp
 *.tlog/
+/SGFME.Infrastructure.Data/Context/SqlServerContext.cs
