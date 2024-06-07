@@ -39,4 +39,8 @@ project.nuget.cache
 *.tmp
 *.temp
 *.tlog/
+<<<<<<< HEAD
 /SGFME.Infrastructure.Data/Context/SqlServerContext.cs
+=======
+/www/Pages/RepresentanteCadastro.cshtml
+>>>>>>> Gustavo
