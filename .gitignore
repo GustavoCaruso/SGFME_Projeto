@@ -39,4 +39,3 @@ project.nuget.cache
 *.tmp
 *.temp
 *.tlog/
-/www/Pages/RepresentanteCadastro.cshtml
