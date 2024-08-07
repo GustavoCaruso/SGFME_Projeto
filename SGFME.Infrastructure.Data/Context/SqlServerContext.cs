@@ -86,8 +86,12 @@ namespace SGFME.Infrastructure.Data.Context
 
             modelBuilder.Entity<Especialidade>(new EspecialidadeMapping().Configure);//TESTE
             modelBuilder.Entity<VersaoCid>(new VersaoCidMapping().Configure);
+<<<<<<< HEAD
 
 
+=======
+            //TESTE2
+>>>>>>> 2andre
         }
     }
 }
