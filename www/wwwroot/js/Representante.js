@@ -1,14 +1,12 @@
 ﻿const urlAPI = "https://localhost:7034/";
 
 $(document).ready(function () {
-    // Inicializa os campos select com "Selecione uma opção"
+    
     $("select").prepend('<option value="" selected>Selecione uma opção</option>');
-
     // Apenas números nos campos CPF, CNS e RG
     $(".numeric-only").on("input", function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
-
     // Limitar o tamanho dos campos
     $("#txtnomeCompleto, #txtnomeConjuge, #txtnomeMae").attr('maxlength', 100);
     $("#txtcnsNumero").attr('maxlength', 15);
