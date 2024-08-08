@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 ﻿
 
 
 const urlAPI = "https://localhost:7034/"
+=======
+﻿const urlAPI = "https://localhost:7034/";
+>>>>>>> 2gustavo
 
 $(document).ready(function () {
 
