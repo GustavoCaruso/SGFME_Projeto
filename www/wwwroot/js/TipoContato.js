@@ -1,10 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+﻿const urlAPI = "https://localhost:7034/";
+=======
+>>>>>>> 2gustavo
 ﻿
 
 
 const urlAPI = "https://localhost:7034/"
+<<<<<<< HEAD
 =======
 ﻿const urlAPI = "https://localhost:7034/";
+>>>>>>> 2gustavo
+=======
+>>>>>>> 2andre
 >>>>>>> 2gustavo
 
 $(document).ready(function () {
