@@ -78,11 +78,35 @@ namespace SGFME.Infrastructure.Data.Context
             modelBuilder.Entity<EstabelecimentoSaude>(new EstabelecimentoSaudeMapping().Configure);//Replicar para as próximas entidades
             modelBuilder.Entity<Medico>(new MedicoMapping().Configure);//Replicar para as próximas entidades
 
-            modelBuilder.Entity<Representante>(new RepresentanteMapping().Configure);   
+            modelBuilder.Entity<Representante>(new RepresentanteMapping().Configure);  
             modelBuilder.Entity<Medicamento>(new MedicamentoMapping().Configure);
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+            modelBuilder.Entity<Especialidade>(new EspecialidadeMapping().Configure);
+            modelBuilder.Entity<VersaoCid>(new VersaoCidMapping().Configure); //teste
+
+            modelBuilder.Entity<Especialidade>(new EspecialidadeMapping().Configure);//TESTE
+            modelBuilder.Entity<VersaoCid>(new VersaoCidMapping().Configure);
+
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2gustavo
+            modelBuilder.Entity<Especialidade>(new EspecialidadeMapping().Configure);
+            modelBuilder.Entity<VersaoCid>(new VersaoCidMapping().Configure); //teste
+
+
             modelBuilder.Entity<Especialidade>(new EspecialidadeMapping().Configure);//TESTE
             modelBuilder.Entity<VersaoCid>(new VersaoCidMapping().Configure);
             //TESTE2
+<<<<<<< HEAD
+>>>>>>> 2andre
+>>>>>>> 2gustavo
+=======
+
+>>>>>>> 2gustavo
         }
     }
 }

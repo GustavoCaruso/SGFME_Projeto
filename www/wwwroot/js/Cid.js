@@ -1,21 +1,35 @@
 ﻿const urlAPI = "https://localhost:7034/";
+<<<<<<< HEAD
+let statusOptions = '';
+let versaoCidOptions = ''; // Adiciona a variável para armazenar as opções de versão do CID
+//teste
+=======
+<<<<<<< HEAD
+let statusOptions = '';
+let versaoCidOptions = ''; // Adiciona a variável para armazenar as opções de versão do CID
+=======
+>>>>>>> 2andre
+>>>>>>> 2gustavo
 
 $(document).ready(function () {
+    carregarOpcoesStatus(() => {
+        carregarOpcoesVersaoCid(() => {
+            if ($("#txtid").length > 0) {
+                let params = new URLSearchParams(window.location.search);
+                let id = params.get('id');
+                if (id) {
+                    visualizar(id);
+                }
+            }
+        });
+    });
+
     $(".numeric-only").on("input", function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
 
     if ($("#tabela").length > 0) {
         carregarCids();
-    } else if ($("#txtid").length > 0) {
-        let params = new URLSearchParams(window.location.search);
-        let id = params.get('id');
-        if (id) {
-            visualizar(id);
-        } else {
-            let dataAtual = new Date().toISOString().split('T')[0];
-            $("#txtdataCadastro").val(dataAtual);
-        }
     }
 
     $("#btnlimpar").click(function () {
@@ -27,10 +41,47 @@ $(document).ready(function () {
         window.location.href = "/CidCadastro?id=" + codigo;
     });
 
-    $(document).on("click", ".excluir", function (elemento) {
+    $(document).on("change", ".alterar-status", function (elemento) {
         let codigo = $(elemento.target).closest("tr").find(".codigo").text();
-        excluir(codigo);
+        let novoStatus = $(elemento.target).val();
+        mudarStatus(codigo, novoStatus);
     });
+
+    function carregarOpcoesStatus(callback) {
+        $.ajax({
+            url: urlAPI + "api/Cid/tipoStatus",
+            method: "GET",
+            success: function (data) {
+                statusOptions = '';  // Reinicializa a variável statusOptions
+                data.forEach(item => {
+                    statusOptions += `<option value="${item.id}">${item.nome}</option>`;
+                });
+                $("#selectStatus").html(statusOptions);  // Preenche o select com as opções de status
+                if (callback) callback(); // Chama o callback após carregar as opções
+            },
+            error: function () {
+                alert("Erro ao carregar os status.");
+            }
+        });
+    }
+
+    function carregarOpcoesVersaoCid(callback) {
+        $.ajax({
+            url: urlAPI + "api/Cid/tipoVersaoCid",
+            method: "GET",
+            success: function (data) {
+                versaoCidOptions = '';  // Reinicializa a variável versaoCidOptions
+                data.forEach(item => {
+                    versaoCidOptions += `<option value="${item.id}">${item.nome}</option>`;
+                });
+                $("#selectVersaoCid").html(versaoCidOptions);  // Preenche o select com as opções de versão do CID
+                if (callback) callback(); // Chama o callback após carregar as opções
+            },
+            error: function () {
+                alert("Erro ao carregar as versões do CID.");
+            }
+        });
+    }
 
     function validarCampos() {
         let isValid = true;
@@ -38,19 +89,28 @@ $(document).ready(function () {
 
         if (!$("#txtcodigo").val().trim()) {
             $("#txtcodigo").addClass('is-invalid');
+            $("#txtcodigo").siblings('.invalid-feedback').text('O código do CID é obrigatório.');
             isValid = false;
         }
+
         if (!$("#txtdescricao").val().trim() || $("#txtdescricao").val().trim().length > 100) {
             $("#txtdescricao").addClass('is-invalid');
-            $("#txtdescricao").siblings('.invalid-feedback').text('A descrição é obrigatória e não pode exceder 100 caracteres.');
+            let feedbackMessage = $("#txtdescricao").val().trim().length > 100 ?
+                'A descrição não pode exceder 100 caracteres.' :
+                'A descrição é obrigatória.';
+            $("#txtdescricao").siblings('.invalid-feedback').text(feedbackMessage);
             isValid = false;
         }
+
         if (!$("#selectStatus").val().trim() || $("#selectStatus").val() === "0") {
             $("#selectStatus").addClass('is-invalid');
+            $("#selectStatus").siblings('.invalid-feedback').text('O status é obrigatório.');
             isValid = false;
         }
+
         if (!$("#selectVersaoCid").val().trim() || $("#selectVersaoCid").val() === "0") {
             $("#selectVersaoCid").addClass('is-invalid');
+            $("#selectVersaoCid").siblings('.invalid-feedback').text('A versão do CID é obrigatória.');
             isValid = false;
         }
 
@@ -61,7 +121,7 @@ $(document).ready(function () {
         $(this).removeClass('is-invalid');
     });
 
-    function carregarOpcoes(apiEndpoint, selectElement, mensagemPadrao) {
+    function carregarOpcoes(apiEndpoint, selectElement, mensagemPadrao, callback) {
         $.ajax({
             url: urlAPI + apiEndpoint,
             method: "GET",
@@ -72,15 +132,13 @@ $(document).ready(function () {
                     const option = `<option value="${item.id}">${item.nome}</option>`;
                     selectElement.append(option);
                 });
+                if (callback) callback();
             },
             error: function () {
                 alert("Erro ao carregar os dados.");
             }
         });
     }
-
-    carregarOpcoes("api/Cid/tipoStatus", $("#selectStatus"), "Selecione um status");
-    carregarOpcoes("api/Cid/tipoVersaoCid", $("#selectVersaoCid"), "Selecione uma versão");
 
     $("#btnsalvar").click(function () {
         if (validarCampos()) {
@@ -89,8 +147,7 @@ $(document).ready(function () {
                 codigo: $("#txtcodigo").val(),
                 descricao: $("#txtdescricao").val(),
                 idStatus: $("#selectStatus").val(),
-                idVersaoCid: $("#selectVersaoCid").val(),
-                dataCadastro: $("#txtdataCadastro").val()
+                idVersaoCid: $("#selectVersaoCid").val()
             };
 
             $.ajax({
@@ -133,7 +190,6 @@ $(document).ready(function () {
         $("#selectStatus").val('');
         $("#selectVersaoCid").val('');
         $("#txtid").val('0');
-        $("#txtdataCadastro").val(new Date().toISOString().split('T')[0]);
     }
 
     function carregarCids() {
@@ -147,8 +203,9 @@ $(document).ready(function () {
                     $(linha).find(".codigo").html(item.id);
                     $(linha).find(".codigoCid").html(item.codigo);
                     $(linha).find(".descricao").html(item.descricao);
-                    $(linha).find(".status").html(item.status ? item.status.nome : "Não Definido");
                     $(linha).find(".versaoCid").html(item.versaocid ? item.versaocid.nome : "Não Definido");
+                    $(linha).find(".alterar-status").html(statusOptions);
+                    $(linha).find(".alterar-status").val(item.idStatus);
 
                     $(linha).show();
                     $("#tabela").append(linha);
@@ -167,17 +224,20 @@ $(document).ready(function () {
         });
     }
 
-    function excluir(codigo) {
+    function mudarStatus(codigo, novoStatus) {
+        console.log("Alterando status para CID:", codigo, "Novo Status:", novoStatus);
         $.ajax({
-            type: "DELETE",
-            url: urlAPI + "api/Cid/" + codigo,
-            contentType: "application/json;charset=utf-8",
+            type: "PATCH",
+            url: urlAPI + "api/Cid/" + codigo + "/mudarStatus",
+            contentType: "application/json",
+            data: JSON.stringify(novoStatus),  // Enviando apenas o valor do status
+            dataType: "json",
             success: function () {
-                alert('Exclusão efetuada!');
-                location.reload();
+                alert('Status alterado com sucesso!');
             },
             error: function (xhr, textStatus, errorThrown) {
-                alert("Erro ao excluir o CID: " + errorThrown);
+                console.log("Erro:", xhr.responseText);
+                alert("Erro ao alterar o status do CID: " + xhr.responseText);
             }
         });
     }
@@ -195,13 +255,10 @@ $(document).ready(function () {
                 $("#txtdescricao").val(jsonResult.descricao);
                 $("#selectStatus").val(jsonResult.idStatus);
                 $("#selectVersaoCid").val(jsonResult.idVersaoCid);
-                $("#txtdataCadastro").val(new Date(jsonResult.dataCadastro).toISOString().split('T')[0]);
             },
             error: function (response) {
                 alert("Erro ao carregar os dados: " + response);
             }
         });
     }
-
-    carregarCids();
 });
