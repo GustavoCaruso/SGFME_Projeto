@@ -1,7 +1,8 @@
 ﻿const urlAPI = "https://localhost:7034/";
-<<<<<<< HEAD
+
 let statusOptions = '';
 let versaoCidOptions = ''; // Adiciona a variável para armazenar as opções de versão do CID
+<<<<<<< HEAD
 //teste
 =======
 <<<<<<< HEAD
@@ -9,6 +10,9 @@ let statusOptions = '';
 let versaoCidOptions = ''; // Adiciona a variável para armazenar as opções de versão do CID
 =======
 >>>>>>> 2andre
+>>>>>>> 2gustavo
+=======
+
 >>>>>>> 2gustavo
 
 $(document).ready(function () {
