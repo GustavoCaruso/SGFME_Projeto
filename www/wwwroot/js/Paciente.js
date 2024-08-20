@@ -1,12 +1,7 @@
 ﻿const urlAPI = "https://localhost:7034/";
 
-<<<<<<< HEAD
-$(document).ready(function () {
 
-    $(".numeric-only").on("input", function () {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
-=======
+
 let statusOptions = '';
 let sexoOptions = '';
 let corRacaOptions = '';
@@ -20,7 +15,8 @@ let enderecos = [];
 
 let contatoEmEdicao = null;
 let enderecoEmEdicao = null;
->>>>>>> 2gustavo
+
+
 
 $(document).ready(async function () {
     await carregarOpcoesStatus();
