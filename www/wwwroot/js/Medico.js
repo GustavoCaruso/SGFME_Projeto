@@ -5,6 +5,48 @@ $(document).ready(function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
 
+    // Limitar os campos de texto
+    $("#txtnomeCompleto, #txtnomeMae").attr('maxlength', 100);
+    $("#txtrgNumero").attr('maxlength', 9);
+    $("#txtcnsNumero").attr('maxlength', 15);
+    $("#txtcpfNumero").attr('maxlength', 11);
+
+    // Validar o campo Órgão Expedidor para aceitar até 10 caracteres alfanuméricos
+    $("#txtrgOrgaoExpedidor").on("input", function () {
+        this.value = this.value.replace(/[^a-zA-Z0-9]/g, ''); // Remove caracteres não alfanuméricos
+        if (this.value.length > 10) {
+            this.value = this.value.substring(0, 10); // Limita a 10 caracteres
+        }
+    });
+
+    // Limitar o campo "Valor do Contato" a 100 caracteres alfanuméricos e formatar telefone
+    $("#txtValorContato").on("input", function () {
+        // Remove qualquer caractere que não seja alfanumérico
+        let valor = this.value.replace(/[^a-zA-Z0-9]/g, '');
+
+        // Limita o campo a 100 caracteres
+        if (valor.length > 100) {
+            valor = valor.substring(0, 100);
+        }
+
+        // Verifica se é um número de telefone
+        if (/^\d+$/.test(valor)) {
+            // Remove qualquer caractere que não seja número
+            let telefone = valor.replace(/\D/g, '');
+
+            // Aplica a máscara de telefone (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
+            if (telefone.length <= 10) {
+                telefone = telefone.replace(/^(\d{2})(\d{4})(\d)/, "($1) $2-$3");
+            } else if (telefone.length <= 11) {
+                telefone = telefone.replace(/^(\d{2})(\d{5})(\d)/, "($1) $2-$3");
+            }
+
+            this.value = telefone;
+        } else {
+            this.value = valor;
+        }
+    });
+
     let contatos = [];
     let enderecos = [];
     let medicoDados;
@@ -64,7 +106,7 @@ $(document).ready(function () {
             $("#txtrgDataEmissao").addClass('is-invalid');
             isValid = false;
         }
-        if (!$("#txtrgOrgaoExpedidor").val().trim()) {
+        if (!$("#txtrgOrgaoExpedidor").val().trim() || $("#txtrgOrgaoExpedidor").val().length !== 10) {
             $("#txtrgOrgaoExpedidor").addClass('is-invalid');
             isValid = false;
         }
@@ -217,12 +259,12 @@ $(document).ready(function () {
             return;
         }
 
-        if (!valorContato.trim()) {
-            alert("Por favor, insira um valor de contato válido.");
+        if (!valorContato.trim() || valorContato.length > 100) {
+            alert("Por favor, insira um valor de contato válido (máximo 100 caracteres).");
             return;
         }
 
-        if (valorContato && tipoContato) {
+        if (tipoContato && valorContato) {
             contatos.push({ idTipoContato: idTipoContato, tipo: tipoContato, valor: valorContato });
             atualizarTabelaContatos();
             $("#txtValorContato").val('');
@@ -290,6 +332,10 @@ $(document).ready(function () {
 
         enderecos.push({ idTipoEndereco, tipo: tipoEndereco, logradouro, numero, complemento, bairro, cidade, uf, cep, pontoReferencia });
         atualizarTabelaEnderecos();
+        limparCamposEndereco();
+    });
+
+    function limparCamposEndereco() {
         $("#txtLogradouro").val('');
         $("#txtNumero").val('');
         $("#txtComplemento").val('');
@@ -298,7 +344,7 @@ $(document).ready(function () {
         $("#selectEstado").val('');
         $("#txtCep").val('');
         $("#txtPontoReferencia").val('');
-    });
+    }
 
     function atualizarTabelaContatos() {
         const tabela = $("#contatoTable tbody");
