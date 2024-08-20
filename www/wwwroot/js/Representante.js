@@ -15,7 +15,7 @@ let houveAlteracao = false;
 let contatoEmEdicao = null;
 let enderecoEmEdicao = null;
 
-<<<<<<< HEAD
+
     // Limitar o tamanho dos campos
     $("#txtnomeCompleto, #txtnomeConjuge, #txtnomeMae").attr('maxlength', 100);
     $("#txtcnsNumero").attr('maxlength', 15);
@@ -67,10 +67,10 @@ let enderecoEmEdicao = null;
     let contatos = [];
     let enderecos = [];
     let RepresentanteDados;
-=======
+
 $(document).ready(async function () {
     await carregarDadosSelecoes();
->>>>>>> 2gustavo
+
 
     if ($("#tabela").length > 0) {
         carregarRepresentantes();
@@ -119,7 +119,7 @@ $(document).ready(async function () {
         }
     });
 
-<<<<<<< HEAD
+
     function validarCampos() {
         let isValid = true;
         $(".form-control").removeClass('is-invalid');
@@ -218,11 +218,11 @@ $(document).ready(async function () {
 
     $("#selectEstado").change(function () {
         carregarMunicipios($(this).val(), $("#selectMunicipio"));
-=======
+
     $(document).on("focus", ".alterar-status", function () {
         // Armazena o valor original antes da mudança
         $(this).data('original-value', $(this).val());
->>>>>>> 2gustavo
+
     });
 
     $("#selectNaturalidadeUf").change(function () {
