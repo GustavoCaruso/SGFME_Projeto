@@ -1,35 +1,7 @@
 ﻿const urlAPI = "https://localhost:7034/";
 
 $(document).ready(function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-   
->>>>>>> 2andre
-=======
-=======
 
-=======
-<<<<<<< HEAD
-    
-=======
->>>>>>> 2gustavo
-<<<<<<< Updated upstream
-   
-=======
-
->>>>>>> Stashed changes
->>>>>>> 2andre
-<<<<<<< HEAD
-=======
->>>>>>> 5d8a0b246a19d4d7b3ef8ae50769fb52071f3347
->>>>>>> 2gustavo
-=======
-
->>>>>>> 2gustavo
     $(".numeric-only").on("input", function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
