@@ -12,6 +12,7 @@ let tipoContatoOptions = '';
 let tipoEnderecoOptions = '';
 let contatos = [];
 let enderecos = [];
+let houveAlteracao = false;
 
 let contatoEmEdicao = null;
 let enderecoEmEdicao = null;
@@ -19,11 +20,6 @@ let enderecoEmEdicao = null;
 
 
 $(document).ready(async function () {
-    await carregarOpcoesStatus();
-    await carregarOpcoesSexo();
-    await carregarOpcoesCorRaca();
-    await carregarOpcoesProfissao();
-    await carregarOpcoesEstadoCivil();
     await carregarDadosSelecoes();
 
     if ($("#tabela").length > 0) {
@@ -62,9 +58,22 @@ $(document).ready(async function () {
     $(document).on("change", ".alterar-status", function (elemento) {
         let codigo = $(elemento.target).closest("tr").find(".codigo").text();
         let novoStatus = $(elemento.target).val();
-        console.log("Mudança de status. Código:", codigo, "Novo Status:", novoStatus);
-        mudarStatus(codigo, novoStatus);
+
+        if (novoStatus === "0") {
+            alert("Seleção inválida! Por favor, escolha um status válido.");
+            // Reverte a seleção para o valor anterior
+            $(elemento.target).val($(elemento.target).data('original-value'));
+        } else {
+            console.log("Mudança de status. Código:", codigo, "Novo Status:", novoStatus);
+            mudarStatus(codigo, novoStatus);
+        }
     });
+
+    $(document).on("focus", ".alterar-status", function () {
+        // Armazena o valor original antes da mudança
+        $(this).data('original-value', $(this).val());
+    });
+
 
     $("#selectNaturalidadeUf").change(function () {
         const ufSelecionada = $(this).val();
@@ -121,6 +130,12 @@ $(document).ready(async function () {
         }
     });
 
+    $(".form-control").on("input change", function () {
+        if (!houveAlteracao) {
+            houveAlteracao = true;
+        }
+    });
+
     configurarMascaraCPF();
     configurarMascaraCEP();
 });
@@ -151,6 +166,7 @@ function carregarDadosSelecoes() {
     ]);
 }
 
+
 function configurarMascaraCPF() {
     $("#txtcpfNumero").off("input").on("input", function () {
         let valor = $(this).val();
@@ -175,15 +191,23 @@ function configurarMascaraCEP() {
 }
 
 function carregarOpcoesStatus() {
+    const cachedStatus = localStorage.getItem('statusOptions');
+    if (cachedStatus) {
+        statusOptions = cachedStatus;
+        $("#selectStatus").html(statusOptions);
+        return Promise.resolve();
+    }
+
     return $.ajax({
         url: urlAPI + "api/Paciente/tipoStatus",
         method: "GET",
         success: function (data) {
-            statusOptions = '<option value="0">Selecione um status</option>'; // Define a opção padrão
+            statusOptions = '<option value="0">Selecione um status</option>';
             data.forEach(item => {
                 statusOptions += `<option value="${item.id}">${item.nome}</option>`;
             });
-            $("#selectStatus").html(statusOptions); // Popula o select do formulário
+            $("#selectStatus").html(statusOptions);
+            localStorage.setItem('statusOptions', statusOptions);
         },
         error: function () {
             alert("Erro ao carregar os status.");
@@ -191,17 +215,25 @@ function carregarOpcoesStatus() {
     });
 }
 
+
 function carregarOpcoesSexo() {
+    const cachedSexo = localStorage.getItem('sexoOptions');
+    if (cachedSexo) {
+        sexoOptions = cachedSexo;
+        $("#selectSexo").html(sexoOptions);
+        return Promise.resolve();
+    }
+
     return $.ajax({
         url: urlAPI + "api/Paciente/tipoSexo",
         method: "GET",
         success: function (data) {
-            const defaultOption = '<option value="0">Selecione um sexo</option>';
-            $("#selectSexo").html(defaultOption); // Define a opção padrão primeiro
+            sexoOptions = '<option value="0">Selecione um sexo</option>';
             data.forEach(item => {
-                const option = `<option value="${item.id}">${item.nome}</option>`;
-                $("#selectSexo").append(option);
+                sexoOptions += `<option value="${item.id}">${item.nome}</option>`;
             });
+            $("#selectSexo").html(sexoOptions);
+            localStorage.setItem('sexoOptions', sexoOptions);
         },
         error: function () {
             alert("Erro ao carregar os tipos de sexo.");
@@ -209,17 +241,25 @@ function carregarOpcoesSexo() {
     });
 }
 
+
 function carregarOpcoesEstadoCivil() {
+    const cachedEstadoCivil = localStorage.getItem('estadoCivilOptions');
+    if (cachedEstadoCivil) {
+        estadoCivilOptions = cachedEstadoCivil;
+        $("#selectEstadoCivil").html(estadoCivilOptions);
+        return Promise.resolve();
+    }
+
     return $.ajax({
         url: urlAPI + "api/Paciente/tipoEstadoCivil",
         method: "GET",
         success: function (data) {
-            const defaultOption = '<option value="0">Selecione um estado civil</option>';
-            $("#selectEstadoCivil").html(defaultOption); // Define a opção padrão primeiro
+            estadoCivilOptions = '<option value="0">Selecione um estado civil</option>';
             data.forEach(item => {
-                const option = `<option value="${item.id}">${item.nome}</option>`;
-                $("#selectEstadoCivil").append(option);
+                estadoCivilOptions += `<option value="${item.id}">${item.nome}</option>`;
             });
+            $("#selectEstadoCivil").html(estadoCivilOptions);
+            localStorage.setItem('estadoCivilOptions', estadoCivilOptions);
         },
         error: function () {
             alert("Erro ao carregar os estados civis.");
@@ -227,17 +267,25 @@ function carregarOpcoesEstadoCivil() {
     });
 }
 
+
 function carregarOpcoesCorRaca() {
+    const cachedCorRaca = localStorage.getItem('corRacaOptions');
+    if (cachedCorRaca) {
+        corRacaOptions = cachedCorRaca;
+        $("#selectCorRaca").html(corRacaOptions);
+        return Promise.resolve();
+    }
+
     return $.ajax({
         url: urlAPI + "api/Paciente/tipoCorRaca",
         method: "GET",
         success: function (data) {
-            const defaultOption = '<option value="0">Selecione uma cor/raça</option>';
-            $("#selectCorRaca").html(defaultOption); // Define a opção padrão primeiro
+            corRacaOptions = '<option value="0">Selecione uma cor/raça</option>';
             data.forEach(item => {
-                const option = `<option value="${item.id}">${item.nome}</option>`;
-                $("#selectCorRaca").append(option);
+                corRacaOptions += `<option value="${item.id}">${item.nome}</option>`;
             });
+            $("#selectCorRaca").html(corRacaOptions);
+            localStorage.setItem('corRacaOptions', corRacaOptions);
         },
         error: function () {
             alert("Erro ao carregar as opções de cor/raça.");
@@ -245,23 +293,32 @@ function carregarOpcoesCorRaca() {
     });
 }
 
+
 function carregarOpcoesProfissao() {
+    const cachedProfissao = localStorage.getItem('profissaoOptions');
+    if (cachedProfissao) {
+        profissaoOptions = cachedProfissao;
+        $("#selectProfissao").html(profissaoOptions);
+        return Promise.resolve();
+    }
+
     return $.ajax({
         url: urlAPI + "api/Paciente/tipoProfissao",
         method: "GET",
         success: function (data) {
-            const defaultOption = '<option value="0">Selecione uma profissão</option>';
-            $("#selectProfissao").html(defaultOption); // Define a opção padrão primeiro
+            profissaoOptions = '<option value="0">Selecione uma profissão</option>';
             data.forEach(item => {
-                const option = `<option value="${item.id}">${item.nome}</option>`;
-                $("#selectProfissao").append(option);
+                profissaoOptions += `<option value="${item.id}">${item.nome}</option>`;
             });
+            $("#selectProfissao").html(profissaoOptions);
+            localStorage.setItem('profissaoOptions', profissaoOptions);
         },
         error: function () {
             alert("Erro ao carregar as profissões.");
         }
     });
 }
+
 
 
 function carregarOpcoes(apiEndpoint, selectElement) {
@@ -292,7 +349,7 @@ function carregarEstados(selectElement) {
         method: "GET",
         success: function (data) {
             selectElement.empty();
-            selectElement.append('<option value="">Selecione uma opção</option>');
+            selectElement.append('<option value="">Selecione uma UF</option>');
             data.forEach(estado => {
                 const option = `<option value="${estado.sigla}">${estado.sigla}</option>`;
                 selectElement.append(option);
@@ -312,7 +369,7 @@ function carregarMunicipios(estadoSigla, selectElement, cidadeSelecionada = null
             method: "GET",
             success: function (data) {
                 selectElement.empty();
-                selectElement.append('<option value="">Selecione uma opção</option>');
+                selectElement.append('<option value="">Selecione uma Cidade</option>');
                 data.forEach(municipio => {
                     const option = `<option value="${municipio.nome}">${municipio.nome}</option>`;
                     selectElement.append(option);
@@ -322,11 +379,11 @@ function carregarMunicipios(estadoSigla, selectElement, cidadeSelecionada = null
                 }
             },
             error: function () {
-                alert("Erro ao carregar os municípios.");
+                alert("Erro ao carregar as Cidades.");
             }
         });
     } else {
-        selectElement.empty().append('<option value="">Selecione uma opção</option>');
+        selectElement.empty().append('<option value="">Selecione uma cidade</option>');
     }
 }
 
@@ -337,21 +394,29 @@ function carregarPacientes() {
         url: urlAPI + "api/Paciente/dadosBasicos",
         method: "GET",
         success: function (data) {
-            $("#tabela").empty();
+            const tabela = $("#tabela");
+            tabela.empty();
+
+            const fragment = document.createDocumentFragment();
+
             $.each(data, function (index, item) {
                 var linha = $("#linhaExemplo").clone().removeAttr("id").removeAttr("style");
                 $(linha).find(".codigo").html(item.id);
                 $(linha).find(".nomeCompleto").html(item.nomeCompleto);
                 $(linha).find(".dataNascimento").html(new Date(item.dataNascimento).toLocaleDateString());
+                $(linha).find(".rg").html(item.rgNumero); // Adiciona o RG
+                $(linha).find(".cpf").html(item.cpfNumero); // Adiciona o CPF
 
                 var statusSelect = $("<select>")
                     .addClass("form-select alterar-status")
                     .html(statusOptions) // Usa as opções armazenadas
                     .val(item.idStatus); // Define o valor selecionado
                 $(linha).find(".status").html(statusSelect);
-                $(linha).show();
-                $("#tabela").append(linha);
+
+                fragment.appendChild(linha[0]); // Adiciona a linha ao fragmento
             });
+
+            tabela.append(fragment); // Adiciona todas as linhas de uma vez ao DOM
 
             $('#tabelaPaciente').DataTable({
                 language: {
@@ -368,6 +433,7 @@ function carregarPacientes() {
         }
     });
 }
+
 
 
 
@@ -423,11 +489,20 @@ function validarCampos() {
 }
 
 $("#btnsalvar").click(function () {
+    // Só verificar a alteração se não for um novo cadastro
+    if ($("#txtid").val() !== "0" && houveAlteracao) {
+        const confirmSave = confirm("Você fez alterações no formulário. Deseja salvar as alterações?");
+        if (!confirmSave) {
+            return; // Cancela o salvamento se o usuário escolher "Não"
+        }
+    }
+
+
     if (validarCampos()) {
         // Removendo a máscara dos campos necessários
         const rgNumero = removerMascara($("#txtrgNumero").val(), "RG");
         const cnsNumero = removerMascara($("#txtcnsNumero").val(), "CNS");
-        const cpfNumero = removerMascara($("#txtcpfNumero").val(), "CPF");
+        const cpfNumero = removerMascara($("#txtcpfNumero").val(), "CPF"); // Certifique-se de remover a máscara do CPF aqui
 
         // Para cada endereço, remover a máscara do CEP
         enderecos = enderecos.map(endereco => ({
@@ -444,7 +519,7 @@ $("#btnsalvar").click(function () {
             rgOrgaoExpedidor: $("#txtrgOrgaoExpedidor").val(),
             rgUfEmissao: $("#selectRgUfEmissao").val(),
             cnsNumero: cnsNumero,
-            cpfNumero: cpfNumero,
+            cpfNumero: cpfNumero, // CPF sem máscara
             nomeMae: $("#txtnomeMae").val(),
             nomeConjuge: $("#txtnomeConjuge").val(),
             naturalidadeCidade: $("#selectNaturalidadeCidade").val(),
@@ -474,6 +549,7 @@ $("#btnsalvar").click(function () {
                 if ($("#tabela").length > 0) {
                     carregarPacientes();
                 }
+                houveAlteracao = false; // Resetar a flag de alteração após salvar com sucesso
             },
             error: function (jqXHR, textStatus) {
                 if (jqXHR.status === 400) {
@@ -496,6 +572,8 @@ $("#btnsalvar").click(function () {
 });
 
 
+
+
 function limparFormulario() {
     $("#txtnomeCompleto").val('');
     $("#txtdataNascimento").val('');
@@ -514,17 +592,22 @@ function limparFormulario() {
     $("#selectNaturalidadeUf").val('');
     $("#txtpeso").val('');
     $("#txtaltura").val('');
-    $("#selectStatus").val('');
-    $("#selectSexo").val('');
-    $("#selectProfissao").val('');
-    $("#selectCorRaca").val('');
-    $("#selectEstadoCivil").val('');
+
+    // Restaurar os selects para a opção padrão (com valor "0")
+    $("#selectStatus").val("0");
+    $("#selectSexo").val("0");
+    $("#selectProfissao").val("0");
+    $("#selectCorRaca").val("0");
+    $("#selectEstadoCivil").val("0");
 
     contatos = [];
     enderecos = [];
     atualizarTabelaContatos();
     atualizarTabelaEnderecos();
+
+    houveAlteracao = false; // Resetar a flag de alteração após limpar o formulário
 }
+
 
 
 function mudarStatus(codigo, novoStatus) {
@@ -545,83 +628,90 @@ function mudarStatus(codigo, novoStatus) {
     });
 }
 
-function visualizar(codigo) {
-    $.ajax({
-        type: "GET",
-        url: urlAPI + "api/Paciente/" + codigo + "/dadosCompletos",
-        contentType: "application/json;charset=utf-8",
-        dataType: "json",
-        success: function (jsonResult) {
-            // Preenche os campos com os valores retornados
-            $("#txtid").val(jsonResult.id);
-            $("#txtnomeCompleto").val(jsonResult.nomeCompleto);
+async function visualizar(codigo) {
+    try {
+        // Mostrar o indicador de carregamento
+        $("#loading").show();
 
-            var dataNascimento = new Date(jsonResult.dataNascimento);
-            $("#txtdataNascimento").val(dataNascimento.toISOString().split('T')[0]);
+        const pacientePromise = $.ajax({
+            type: "GET",
+            url: urlAPI + "api/Paciente/" + codigo + "/dadosCompletos",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+        });
 
-            $("#txtrgNumero").val(jsonResult.rgNumero);
-            $("#txtrgDataEmissao").val(new Date(jsonResult.rgDataEmissao).toISOString().split('T')[0]);
-            $("#txtrgOrgaoExpedidor").val(jsonResult.rgOrgaoExpedidor);
+        const estadosPromise = carregarEstados($("#selectRgUfEmissao"));
 
-            // Primeiro, carrega as opções de UF para RG Emissão
-            carregarEstados($("#selectRgUfEmissao")).then(() => {
-                // Após carregar as UFs, define o valor correto
-                $("#selectRgUfEmissao").val(jsonResult.rgUfEmissao);
-            });
+        // Aguarda as promessas em paralelo
+        const [jsonResult, estados] = await Promise.all([pacientePromise, estadosPromise]);
 
-            // Primeiro, carrega as opções de UF para Naturalidade
-            carregarEstados($("#selectNaturalidadeUf")).then(() => {
-                // Após carregar as UFs, define o valor correto
-                $("#selectNaturalidadeUf").val(jsonResult.naturalidadeUf);
+        // Preenche os campos com os valores retornados
+        $("#txtid").val(jsonResult.id);
+        $("#txtnomeCompleto").val(jsonResult.nomeCompleto);
 
-                // Agora, carrega os municípios da UF selecionada
-                carregarMunicipios(jsonResult.naturalidadeUf, $("#selectNaturalidadeCidade"), jsonResult.naturalidadeCidade);
-            });
+        const dataNascimento = new Date(jsonResult.dataNascimento);
+        $("#txtdataNascimento").val(dataNascimento.toISOString().split('T')[0]);
 
-            $("#txtcnsNumero").val(jsonResult.cnsNumero);
-            $("#txtcpfNumero").val(jsonResult.cpfNumero);
-            $("#txtdataCadastro").val(new Date(jsonResult.dataCadastro).toISOString().split('T')[0]);
+        $("#txtrgNumero").val(jsonResult.rgNumero);
+        $("#txtrgDataEmissao").val(new Date(jsonResult.rgDataEmissao).toISOString().split('T')[0]);
+        $("#txtrgOrgaoExpedidor").val(jsonResult.rgOrgaoExpedidor);
+        $("#selectRgUfEmissao").val(jsonResult.rgUfEmissao);
 
-            $("#selectStatus").val(jsonResult.idStatus);
-            $("#selectSexo").val(jsonResult.idSexo);
-            $("#selectProfissao").val(jsonResult.idProfissao);
-            $("#selectCorRaca").val(jsonResult.idCorRaca);
-            $("#selectEstadoCivil").val(jsonResult.idEstadoCivil);
+        await carregarEstados($("#selectNaturalidadeUf")).then(() => {
+            $("#selectNaturalidadeUf").val(jsonResult.naturalidadeUf);
+            carregarMunicipios(jsonResult.naturalidadeUf, $("#selectNaturalidadeCidade"), jsonResult.naturalidadeCidade);
+        });
 
-            $("#txtnomeMae").val(jsonResult.nomeMae);
-            $("#txtnomeConjuge").val(jsonResult.nomeConjuge);
+        $("#txtcnsNumero").val(jsonResult.cnsNumero);
+        $("#txtcpfNumero").val(jsonResult.cpfNumero);
+        $("#txtdataCadastro").val(new Date(jsonResult.dataCadastro).toISOString().split('T')[0]);
 
-            $("#txtpeso").val(jsonResult.peso);
-            $("#txtaltura").val(jsonResult.altura);
+        $("#selectStatus").val(jsonResult.idStatus);
+        $("#selectSexo").val(jsonResult.idSexo);
+        $("#selectProfissao").val(jsonResult.idProfissao);
+        $("#selectCorRaca").val(jsonResult.idCorRaca);
+        $("#selectEstadoCivil").val(jsonResult.idEstadoCivil);
 
-            contatos = jsonResult.contato.map(c => ({
-                idTipoContato: c.idTipoContato,
-                tipo: c.tipocontato.nome,
-                valor: c.valor
-            }));
-            atualizarTabelaContatos();
+        $("#txtnomeMae").val(jsonResult.nomeMae);
+        $("#txtnomeConjuge").val(jsonResult.nomeConjuge);
 
-            enderecos = jsonResult.endereco.map(e => ({
-                idTipoEndereco: e.idTipoEndereco,
-                logradouro: e.logradouro,
-                numero: e.numero,
-                complemento: e.complemento,
-                bairro: e.bairro,
-                cidade: e.cidade,
-                uf: e.uf,
-                cep: e.cep,
-                pontoReferencia: e.pontoReferencia
-            }));
-            atualizarTabelaEnderecos();
+        $("#txtpeso").val(jsonResult.peso);
+        $("#txtaltura").val(jsonResult.altura);
 
-            let idade = calcularIdade(dataNascimento);
-            $("#txtidade").val(idade);
-        },
-        error: function (response) {
-            alert("Erro ao carregar os dados: " + response.responseText);
-        }
-    });
+        contatos = jsonResult.contato.map(c => ({
+            idTipoContato: c.idTipoContato,
+            tipo: c.tipocontato.nome,
+            valor: c.valor
+        }));
+        atualizarTabelaContatos();
+
+        enderecos = jsonResult.endereco.map(e => ({
+            idTipoEndereco: e.idTipoEndereco,
+            logradouro: e.logradouro,
+            numero: e.numero,
+            complemento: e.complemento,
+            bairro: e.bairro,
+            cidade: e.cidade,
+            uf: e.uf,
+            cep: e.cep,
+            pontoReferencia: e.pontoReferencia
+        }));
+        atualizarTabelaEnderecos();
+
+        const idade = calcularIdade(dataNascimento);
+        $("#txtidade").val(idade);
+
+    } catch (error) {
+        alert("Erro ao carregar os dados: " + error.responseText);
+    } finally {
+        // Esconder indicador de carregamento
+        $("#loading").hide();
+    }
 }
+
+
+
+
 
 
 
@@ -741,6 +831,7 @@ function atualizarTabelaEnderecos() {
 
 
 
+// Função que é chamada após salvar ou editar um endereço
 function salvarEnderecoEmEdicao() {
     if (enderecoEmEdicao !== null) {
         const enderecoAtualizado = {
@@ -769,7 +860,6 @@ function salvarEnderecoEmEdicao() {
     }
     return true;
 }
-
 
 
 function editarEndereco(index) {
@@ -863,7 +953,7 @@ $("#btnAdicionarContato").click(function () {
     let valorContato = $("#txtValorContato").val();
 
     // Verifica se os campos estão preenchidos
-    if (idTipoContato === "" || idTipoContato === null || tipoContato === "Selecione uma opção") {
+    if (idTipoContato === "" || idTipoContato === null || tipoContato === "Selecione um Tipo de Contato") {
         alert("Por favor, selecione um tipo de contato válido.");
         return;
     }
@@ -924,6 +1014,7 @@ $("#btnAdicionarContato").click(function () {
 
 
 
+// Depois de excluir ou salvar um endereço
 $("#btnAdicionarEndereco").click(function () {
     const idTipoEndereco = $("#selectTipoEndereco").val();
     const logradouro = $("#txtLogradouro").val();
@@ -935,15 +1026,14 @@ $("#btnAdicionarEndereco").click(function () {
     const cep = removerMascara($("#txtCep").val(), "CEP");
     const pontoReferencia = $("#txtPontoReferencia").val();
 
-    // Verificar se todos os campos obrigatórios foram preenchidos
-    if (!idTipoEndereco || !logradouro || !numero || !bairro || !cidade || !uf || !cep) {
-        alert("Por favor, preencha todos os campos obrigatórios do endereço.");
+    // Verificar se a opção "Selecione uma opção" está selecionada
+    if (!idTipoEndereco || idTipoEndereco === "0") {
+        alert("Por favor, selecione um tipo de endereço válido.");
         return;
     }
 
-    // Verificar se o número máximo de endereços foi atingido
-    if (enderecos.length >= 2 && enderecoEmEdicao === null) {
-        alert("Você pode adicionar no máximo 2 endereços.");
+    if (!logradouro || !numero || !bairro || !cidade || !uf || !cep) {
+        alert("Por favor, preencha todos os campos obrigatórios do endereço.");
         return;
     }
 
@@ -968,13 +1058,17 @@ $("#btnAdicionarEndereco").click(function () {
 
     atualizarTabelaEnderecos();
     limparCamposEndereco();
+
+    // Reseta o select para a opção padrão após adicionar ou salvar
+    $("#selectTipoEndereco").val('0');
 });
 
 
 
 
+
 function limparCamposEndereco() {
-    $("#selectTipoEndereco").val('');
+    $("#selectTipoEndereco").val('0');  // Reseta o select para a opção padrão
     $("#txtLogradouro").val('');
     $("#txtNumero").val('');
     $("#txtComplemento").val('');
@@ -1053,6 +1147,7 @@ $("#txtpeso, #txtaltura").on("input", function () {
 });
 
 
+
 $("#txtpeso, #txtaltura").on("blur", function () {
     let valor = $(this).val();
 
@@ -1064,4 +1159,36 @@ $("#txtpeso, #txtaltura").on("blur", function () {
     // Atualiza o valor no campo
     $(this).val(valor);
 });
+
+
+
+
+$("#txtNumero").on("input", function () {
+    let valor = $(this).val();
+
+    // Remove qualquer caractere que não seja número
+    valor = valor.replace(/\D/g, "");
+
+    // Limita o valor a 9999999999
+    if (valor > 9999999999) {
+        valor = 9999999999;
+    }
+
+    // Atualiza o valor no campo
+    $(this).val(valor);
+});
+
+$("#txtNumero").on("blur", function () {
+    let valor = $(this).val();
+
+    // Se o valor for 0 ou vazio, define para 1
+    if (valor === "" || valor === "0") {
+        valor = 1;
+    }
+
+    // Atualiza o valor no campo
+    $(this).val(valor);
+});
+
+
 
