@@ -1,16 +1,7 @@
 ﻿const urlAPI = "https://localhost:7034/";
 
 let statusOptions = '';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 let statusOptions = '';
-=======
->>>>>>> 2andre
->>>>>>> 2gustavo
-=======
-
->>>>>>> 2gustavo
 
 $(document).ready(function () {
     carregarOpcoesStatus(() => {
